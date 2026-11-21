@@ -8,17 +8,19 @@ A 30-second vertical clip for the [make.fun bounty "Clip GTA 6 for the most YouT
 
 ## The clip
 
-`clip.mp4` — 1080x1920 vertical, 30 fps, 30 seconds, silent.
+`clip.mp4` — 1080x1920 vertical, 30 fps, 30 seconds, with the trailer's own audio.
 
-- **0–5.5s — the hook:** driving into Leonida with a jet ski on the trailer, "GTA 6 IS FINALLY HERE" / "VICE CITY LOOKS INSANE".
-- **5.5–10.5s — the crew:** the lowrider crew cruising.
-- **10.5–16s — the stunt:** a dirt-bike jump over the palms.
-- **16–23.5s — the night:** a night street chase and action.
-- **23.5–30s — the pitch:** the GTA VI logo over Vice City at dusk, with "Make clips like this with AI" / "and earn real money on make.fun", the bounty link `make.fun/bounty/gta6-clipper-01`, and play code `makefun-barley-teapot-pinto` appearing progressively.
+- **0–8.6s — ordinary life:** driving into the marina, the marina from above, Jason polishing the boat, "GTA 6 IS FINALLY HERE" / "VICE CITY LOOKS INSANE".
+- **8.6–11.8s — the call:** Jason on the phone.
+- **11.8–16.1s — partners:** the Vice City skyline, Lucia and Jason in the convertible, silhouettes at the window, the two of them by the red car.
+- **16.1–19.2s — the score:** walking through the vault door, a hand on the vault dial.
+- **19.2–24.4s — chaos:** speeding car, police, dirt-bike jump, rooftop explosion.
+- **24.4–26.1s — love beat:** Jason and Lucia embracing at sunset.
+- **26.1–30s — the pitch:** the GTA VI logo over Vice City at dusk, with "Make clips like this with AI" / "and earn real money on make.fun", the bounty link `make.fun/bounty/gta6-clipper-01`, and play code `makefun-barley-teapot-pinto` appearing progressively.
 
 ## How it was made (honest note)
 
-The clip is cut from the official Rockstar Games GTA VI Launch Trailer itself: the trailer file (`assets/trailer.webm`, 90 s, 1280x720, downloaded from YouTube) is cut into five hard-cut segments, letterboxed into the vertical frame over a blurred fill of the same footage, with on-screen text added — rendered with ffmpeg in-session. No trailer audio is used; the clip is silent. The two official stills from the earlier build (`assets/keyart.jpg`, `assets/trailer_thumb.jpg`) remain in the repo but are not used by the current render. `scripts/render-clip.sh` rebuilds the clip deterministically from `assets/trailer.webm`.
+The clip is cut from the official Rockstar Games GTA VI Launch Trailer itself: the trailer file (`assets/trailer.webm`, 90 s, 1280x720, downloaded from YouTube) is cut into thirteen hard-cut segments forming a story arc (ordinary life → the call → partners → the score → chaos → love beat → logo + pitch), letterboxed into the vertical frame over a blurred fill of the same footage, with on-screen text added — rendered with ffmpeg in-session. The trailer's own audio from the same time ranges is included, loudness-normalized. The two official stills from the earlier build (`assets/keyart.jpg`, `assets/trailer_thumb.jpg`) remain in the repo but are not used by the current render. `scripts/render-clip.sh` rebuilds the clip deterministically from `assets/trailer.webm`.
 
 ## Re-render the clip
 
