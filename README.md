@@ -10,13 +10,15 @@ A 30-second vertical clip for the [make.fun bounty "Clip GTA 6 for the most YouT
 
 `clip.mp4` — 1080x1920 vertical, 30 fps, 30 seconds, silent.
 
-- **0–8s — the hook:** the official GTA VI Launch Trailer's hero image (Jason and Lucia in Vice City at sunset, a real frame from the trailer) with a slow zoom, and the words "GTA 6 IS FINALLY HERE" / "VICE CITY LOOKS INSANE".
-- **8–18s — the world:** Rockstar's official GTA VI key art (Lucia and Jason, the speedboat, the supercar, the gator, Leonida) panning across, "WELCOME TO LEONIDA".
-- **18–30s — the pitch:** "MAKE CLIPS LIKE THIS WITH AI AND EARN MONEY ON MAKE.FUN", the bounty link `make.fun/bounty/gta6-clipper-01`, and play code `makefun-barley-teapot-pinto`.
+- **0–5.5s — the hook:** driving into Leonida with a jet ski on the trailer, "GTA 6 IS FINALLY HERE" / "VICE CITY LOOKS INSANE".
+- **5.5–10.5s — the crew:** the lowrider crew cruising.
+- **10.5–16s — the stunt:** a dirt-bike jump over the palms.
+- **16–23.5s — the night:** a night street chase and action.
+- **23.5–30s — the pitch:** the GTA VI logo over Vice City at dusk, with "Make clips like this with AI" / "and earn real money on make.fun", the bounty link `make.fun/bounty/gta6-clipper-01`, and play code `makefun-barley-teapot-pinto` appearing progressively.
 
 ## How it was made (honest note)
 
-The trailer video itself could not be downloaded on the machine that built this entry: YouTube serves the Launch Trailer SABR-only (no direct video URLs) and its player API demands sign-in from this network, so no trailer footage file was available. The clip is therefore built from two real official stills — the trailer's own thumbnail frame and Rockstar's key art — with Ken Burns motion and on-screen text, rendered with ffmpeg in-session. Nothing here pretends to be trailer video footage; the two source images are committed under `assets/` and `scripts/render-clip.sh` rebuilds the clip deterministically from them.
+The clip is cut from the official Rockstar Games GTA VI Launch Trailer itself: the trailer file (`assets/trailer.webm`, 90 s, 1280x720, downloaded from YouTube) is cut into five hard-cut segments, letterboxed into the vertical frame over a blurred fill of the same footage, with on-screen text added — rendered with ffmpeg in-session. No trailer audio is used; the clip is silent. The two official stills from the earlier build (`assets/keyart.jpg`, `assets/trailer_thumb.jpg`) remain in the repo but are not used by the current render. `scripts/render-clip.sh` rebuilds the clip deterministically from `assets/trailer.webm`.
 
 ## Re-render the clip
 
